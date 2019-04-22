@@ -6,10 +6,18 @@ object pepita {
 	var property ciudad = buenosAires 
 
 	var property position = game.at(3,3)
-	method image() = "pepita.png"
-
-	method come(comida) {
+	method image()= "pepita.png"
+		
+		method come(comida) {
 		energia = energia + comida.energia()
+	}
+	method pepitaEngorda(){
+		if(self.energia()>100){
+			game.removeVisual(self)
+			game.addVisualIn("pepitaGorda.png", position)
+			
+			
+		}
 	}
 	
 	method volaHacia(unaCiudad) {
